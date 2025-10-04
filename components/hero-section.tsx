@@ -5,6 +5,7 @@ import { ArrowDown, Sparkles, Download, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { redirect } from "next/dist/server/api-utils";
 
 export function HeroSection() {
   const { resolvedTheme } = useTheme();
@@ -106,7 +107,9 @@ export function HeroSection() {
                 size="lg"
                 className="group btn-gradient border-0 shadow-lg hover-glow text-white"
               >
-                View My Work
+                <a href="https://github.com/tushar598" target="_blank">
+                  View My Work
+                </a>
                 <ArrowDown className="ml-2 w-4 h-4 group-hover:translate-y-1 transition-transform" />
               </Button>
               <Button
@@ -115,7 +118,12 @@ export function HeroSection() {
                 className="glass border-white/20 hover:bg-white/10 bg-transparent"
               >
                 <Download className="mr-2 w-4 h-4" />
-                Download CV
+                <a
+                  href="https://media.licdn.com/dms/document/media/v2/D4D2DAQEXrnq_xUoovQ/profile-treasury-document-pdf-analyzed/B4DZa9wdwuG4Ak-/0/1746940322497?e=1760572800&v=beta&t=R-DkIODuqSZ2yyHSVIwsZfTpS6GGd_at2JP8_N1jxaM"
+                  target="_blank"
+                >
+                  Download CV
+                </a>
               </Button>
             </motion.div>
 
@@ -134,7 +142,7 @@ export function HeroSection() {
               <div className="flex items-center space-x-2">
                 <ExternalLink className="w-4 h-4 text-muted-foreground" />
                 <span className="text-sm text-muted-foreground">
-                  Based in San Francisco
+                  Based in India
                 </span>
               </div>
             </motion.div>

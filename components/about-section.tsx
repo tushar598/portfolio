@@ -1,34 +1,36 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Award, Coffee, Users, Zap, Heart, Star, User } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-
+import { Heart3D, Star3D, Users3D , Award3D, Coffee3D, Zap3D, User3D} from "@/components/ThreeDIcons"; // 👈 Import 3D icons
+import { User } from "lucide-react"
 const stats = [
-  { icon: Award, label: "Projects Completed", value: "150+", color: "from-yellow-400 to-orange-500" },
-  { icon: Users, label: "Happy Clients", value: "80+", color: "from-green-400 to-blue-500" },
-  { icon: Coffee, label: "Cups of Coffee", value: "2000+", color: "from-purple-400 to-pink-500" },
-  { icon: Zap, label: "Years Experience", value: "8+", color: "from-blue-400 to-purple-500" },
+  { icon: Award3D, label: "Projects Completed", value: "25+", color: "from-yellow-400 to-orange-500" },
+  { icon: Users3D, label: "Hackathons Participated", value: "4+", color: "from-green-400 to-blue-500" },
+  { icon: Coffee3D, label: "Cups of Coffee", value: "200+", color: "from-purple-400 to-pink-500" },
+  { icon: Zap3D, label: "Years Experience", value: "3+", color: "from-blue-400 to-purple-500" },
 ]
 
 const values = [
   {
-    icon: Heart,
+    icon: Heart3D,
     title: "Passion-Driven",
-    description: "I pour my heart into every project, ensuring exceptional quality and attention to detail.",
+    description:
+      "I pour my heart into every project, ensuring exceptional quality and attention to detail.",
   },
   {
-    icon: Star,
+    icon: Star3D,
     title: "Innovation First",
-    description: "Always exploring cutting-edge technologies to deliver modern, future-proof solutions.",
+    description:
+      "Always exploring cutting-edge technologies to deliver modern, future-proof solutions.",
   },
   {
-    icon: Users,
+    icon: Users3D,
     title: "User-Centric",
-    description: "Every design decision is made with the end user in mind, creating intuitive experiences.",
+    description:
+      "Every design decision is made with the end user in mind, creating intuitive experiences.",
   },
-]
-
+];
 export function AboutSection() {
   return (
     <section id="about" className="py-32 relative overflow-hidden">
@@ -89,7 +91,7 @@ export function AboutSection() {
                     whileHover={{ scale: 1.2, rotate: 10 }}
                     className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${stat.color} rounded-2xl mb-4 shadow-lg`}
                   >
-                    <stat.icon className="w-8 h-8 text-white" />
+                    <stat.icon  />
                   </motion.div>
                   <motion.div
                     initial={{ scale: 0 }}
@@ -120,61 +122,53 @@ export function AboutSection() {
               <h3 className="text-3xl font-bold mb-6 text-gradient">My Journey</h3>
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  What started as curiosity about how websites work has evolved into an 8-year journey of creating
-                  digital experiences that matter. I believe in the power of technology to solve real problems and
-                  create meaningful connections.
+                Passionate Full-Stack Web Developer with hands-on experience in the MERN stack (MongoDB, Express.js, React.js, Node.js). Skilled in developing scalable and high-performance web applications. Enthusiastic about solving complex problems using Data Structures and Algorithms. Always exploring new technologies and best coding practices.
                 </p>
-                <p>
-                  My approach combines technical expertise with creative vision, ensuring every project not only
-                  functions flawlessly but also tells a compelling story. I'm passionate about clean code, beautiful
-                  design, and the magic that happens when they come together.
-                </p>
-                <p>
-                  When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects,
-                  or sharing knowledge with the developer community through mentoring and writing.
-                </p>
+                
               </div>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            {values.map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.6 }}
-                viewport={{ once: true }}
-                whileHover={{ x: 10 }}
-                className="group"
-              >
-                <Card className="glass border-0 shadow-lg hover-glow transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <motion.div
-                        whileHover={{ scale: 1.2, rotate: 5 }}
-                        className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg"
-                      >
-                        <value.icon className="w-6 h-6 text-white" />
-                      </motion.div>
-                      <div>
-                        <h4 className="text-xl font-bold mb-2 group-hover:text-gradient transition-all">
-                          {value.title}
-                        </h4>
-                        <p className="text-muted-foreground leading-relaxed">{value.description}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
+      initial={{ opacity: 0, x: 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="space-y-6"
+    >
+      {values.map((value, index) => (
+        <motion.div
+          key={value.title}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.2, duration: 0.6 }}
+          viewport={{ once: true }}
+          whileHover={{ x: 10 }}
+          className="group"
+        >
+          <Card className="glass border-0 shadow-lg hover-glow transition-all duration-300">
+            <CardContent className="p-6">
+              <div className="flex items-start space-x-4">
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: 2 }}
+                  className="flex-shrink-0 w-16 h-16 rounded-xl overflow-hidden shadow-lg"
+                >
+                  <value.icon />
+                </motion.div>
+                <div>
+                  <h4 className="text-xl font-bold mb-2 group-hover:text-gradient transition-all">
+                    {value.title}
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {value.description}
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
+    </motion.div>
         </div>
       </div>
     </section>
